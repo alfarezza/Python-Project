@@ -57,7 +57,7 @@ try:
     print(f"Total biaya jual        : Rp {hasil['biaya_jual']:,.2f}")
     print(f"Nilai bersih penjualan  : Rp {hasil['hasil_bersih_jual']:,.2f} <--")
     print(f"Gain/Loss bersih        : Rp {hasil['gain_bersih']:,.2f}")
-    print(f"Persentase gain/loss    : {hasil['persentase_gain']:.2f}%")
+    print(f"Gain/Loss Percentage    : {hasil['persentase_gain']:.2f}%")
 
 except ValueError:
     print("Input tidak valid. Harap masukkan angka saja.")
