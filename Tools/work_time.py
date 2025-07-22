@@ -12,7 +12,7 @@ jam_keluar = datetime.strptime(jam_keluar_str, fmt)
 
 # Hitung selisih waktu
 durasi_kerja = jam_keluar - jam_masuk
-durasi_kerja -= timedelta(hours=1)
+durasi_kerja -= timedelta(hours=0.5)
 
 # Tampilkan durasi dalam jam, menit, dan detik
 total_detik = durasi_kerja.total_seconds()
