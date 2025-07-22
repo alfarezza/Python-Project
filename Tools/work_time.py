@@ -12,7 +12,7 @@ jam_keluar = datetime.strptime(jam_keluar_str, fmt)
 
 # Hitung selisih waktu
 durasi_hadir = jam_keluar - jam_masuk
-durasi_hadir -= timedelta(hours=1)
+# durasi_hadir -= timedelta(hours=1)
 
 durasi_kerja = jam_keluar - jam_masuk
 durasi_kerja -= timedelta(hours=0.5)
