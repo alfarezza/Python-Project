@@ -2,8 +2,8 @@ from datetime import datetime
 from datetime import timedelta
 
 # Waktu masuk dan keluar dalam format string
-jam_masuk_str = "08:00:00"
-jam_keluar_str = "16:00:00"
+jam_masuk_str = "07:22:04"
+jam_keluar_str = "16:10:59"
 
 # Parsing string ke objek datetime
 fmt = "%H:%M:%S"
