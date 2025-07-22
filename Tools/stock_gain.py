@@ -24,8 +24,8 @@ try:
     print(f"Total harga beli   : Rp {harga_beli_awal:,}")
     print(f"Harga sekarang     : Rp {harga_sekarang:,}")
     print(f"Total gain         : Rp {gain:,}")
-    print(f"G/L Percentage     : {persentase_gain:.2f} %")
     print(f"Total nilai aset   : Rp {total_aset:,}")
+    print(f"G/L Percentage     : {persentase_gain:.2f} %")
 
 except ValueError:
     print("Input tidak valid. Pastikan kamu hanya memasukkan angka.")
