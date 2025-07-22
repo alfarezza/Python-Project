@@ -2,8 +2,8 @@ from datetime import datetime
 from datetime import timedelta
 
 # Waktu masuk dan keluar dalam format string
-jam_masuk_str = "07:27:40"
-jam_keluar_str = "16:21:59"
+jam_masuk_str = "08:00:00"
+jam_keluar_str = "16:00:00"
 
 # Parsing string ke objek datetime
 fmt = "%H:%M:%S"
@@ -32,5 +32,5 @@ detik = int(total_detik % 60)
 
 # print(f"Total waktu kehadiran: {jam_hadir} jam {menit_hadir} menit {detik_hadir} detik")
 # print(f"Total waktu kerja: {jam} jam {menit} menit {detik} detik")
-print(f"Total waktu kehadiran: {jam_hadir}:{menit_hadir}:{detik_hadir}")
-print(f"Total waktu kerja: {jam}:{menit}:{detik}")
+print(f"Total waktu kehadiran: {jam_hadir:02d}:{menit_hadir:02d}:{detik_hadir:02d}")
+print(f"Total waktu kerja    : {jam:02d}:{menit:02d}:{detik:02d}")
