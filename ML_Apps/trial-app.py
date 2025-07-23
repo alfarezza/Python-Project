@@ -46,7 +46,7 @@ if page == 'Data Understanding':
         columns = df.columns.to_list()
         selected_column = st.selectbox("Select Column to filter by", columns)
         unique_val = df[selected_column].unique()
-        selected_value = st.checkbox("Select Value", unique_val)
+        selected_value = st.selectbox("Select Value", unique_val)
 
         filtered_df = df[df[selected_column] == selected_value]
         st.write(filtered_df)
