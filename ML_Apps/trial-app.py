@@ -23,3 +23,13 @@ if page == 'Data Understanding':
 
         st.subheader("Data Preview 📅")
         st.write(df.head(10))
+
+        st.subheader("Data Summary")
+        df = df.drop('Unnamed: 0', axis=1)
+        st.write(df.describe())
+
+        st.caption("Dataset Type")
+        st.write(df.dtypes)
+
+        st.caption("Dataset Column")
+        st.write(df.columns.tolist())
