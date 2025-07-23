@@ -22,7 +22,10 @@ if page == 'Data Understanding':
         df = pd.read_csv(load_file)
 
         st.subheader("Data Preview 📅")
-        st.write(df.head(10))
+        st.write("Data Head")
+        st.write(df.head(5))
+        st.write("Data Sample")
+        st.write(df.sample(5))
 
         st.subheader("Data Summary")
         df = df.drop('Unnamed: 0', axis=1)
@@ -30,11 +33,20 @@ if page == 'Data Understanding':
         # st.write(df_describe.describe())
         st.dataframe(df_describe.describe())
 
-        st.caption("Dataset Type")
+        st.write("Dataset Type")
         st.write(df.dtypes)
 
-        st.caption("Dataset Column")
+        st.write("Dataset Column")
         st.write(df.columns.tolist())
 
-        st.caption("Dataset Shapes")
+        st.write("Dataset Shapes")
         st.write(df.shape)
+
+        st.subheader("Filter Data 🔍")
+        columns = df.columns.to_list()
+        selected_column = st.selectbox("Select Column to filter by", columns)
+        unique_val = df[selected_column].unique()
+        selected_value = st.checkbox("Select Value", unique_val)
+
+        filtered_df = df[df[selected_column] == selected_value]
+        st.write(filtered_df)
