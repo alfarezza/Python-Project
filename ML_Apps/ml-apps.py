@@ -24,3 +24,13 @@ st.set_page_config(page_title="ML-Apps", page_icon="🤖", layout="wide")
 
 st.sidebar.title("📂 Main Menu!")
 page = st.sidebar.radio('Choose Page:', ['Prediction', 'Data Understanding', 'Exploratory Data Analysis', 'About Me'])
+
+# ================================= Prediction Page =================================
+if page == 'Prediction':
+    st.header("🖥️ Input Data!")
+    with st.form("prediction_form"):
+        col1, col2 = st.columns(2)
+        with col1:
+            gender = st.selectbox['Gender', ['Male', 'Female']]
+        with col2:
+            age = st.slider("Age (Year):", 17, 80, 25)
