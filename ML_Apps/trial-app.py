@@ -43,10 +43,21 @@ if page == 'Data Understanding':
         st.write(df.shape)
 
         st.subheader("Filter Data 🔍")
+        cols=['result', 'team', 'venue', 'opponent', 'season']
         columns = df.columns.to_list()
-        selected_column = st.selectbox("Select Column to filter by", columns)
+        selected_column = st.selectbox("Select Column to filter by", cols)
         unique_val = df[selected_column].unique()
         selected_value = st.selectbox("Select Value", unique_val)
 
         filtered_df = df[df[selected_column] == selected_value]
         st.write(filtered_df)
+
+        st.subheader("Plot Data")
+        x_col = st.selectbox("Select x-axis column", columns)
+        y_col = st.selectbox("Select y-axis column", columns)
+
+        if st.button("Generate Plot"):
+            st.line_chart(filtered_df.set_index(x_col)[y_col])
+
+    else:
+        st.write("🕛 Waiting on file upload...")
