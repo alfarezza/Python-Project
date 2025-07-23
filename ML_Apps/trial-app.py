@@ -61,3 +61,7 @@ if page == 'Data Understanding':
 
     else:
         st.write("🕛 Waiting on file upload...")
+
+elif page == 'About Me':
+    from ML_Apps import aboutme
+    aboutme.aboutme()
