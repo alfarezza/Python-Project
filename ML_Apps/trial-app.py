@@ -22,4 +22,4 @@ if page == 'Data Understanding':
         df = pd.read_csv(load_file)
 
         st.subheader("Data Preview 📅")
-        st.write(pd.head(10))
+        st.write(df.head(10))
