@@ -29,5 +29,12 @@ def aboutme():
         st.markdown("- 🐙 [GitHub](https://github.com/alfarezza)")
         # st.markdown("- 🌐 [Website](https://.com/)")
 
+        # import os
+        # logo_path = os.path.join("logo", "github-mark.png")
+
     with col2:
-        st.image("logo\github-mark.png", width=500, caption="Alfarezza Ryan P. Purba")  # Ganti dengan foto profil atau logo
+        
+        # st.image(logo_path, width=500)
+
+        st.image("logo/github-mark.png", width=500, caption="Alfarezza Ryan P. Purba")  # Ganti dengan foto profil atau logo
+        # st.image("logo/github-mark.png", width=500)
