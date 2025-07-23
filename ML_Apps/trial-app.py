@@ -7,7 +7,7 @@ import os
 # ================================= Page =================================
 st.set_page_config(page_title="Trial-Apps", page_icon="🤖", layout="wide")
 
-st.title("Simple Data Dashboard 📊")
+# st.title("Simple Data Dashboard 📊")
 
 # ================================= Side Menu =================================
 st.sidebar.title("📂 Main Menu!")
@@ -16,6 +16,9 @@ page = st.sidebar.radio('Choose Page:', ['Data Understanding', 'Exploratory Data
 
 # ================================= Menu Data Understanding =================================
 if page == 'Data Understanding':
+
+    st.title("Simple Data Dashboard 📊")
+    
     load_file = st.file_uploader("Choose a CSV file", type="csv")
 
     if load_file is not None:
@@ -63,5 +66,5 @@ if page == 'Data Understanding':
         st.write("🕛 Waiting on file upload...")
 
 elif page == 'About Me':
-    from ML_Apps import aboutme
+    import aboutme
     aboutme.aboutme()
