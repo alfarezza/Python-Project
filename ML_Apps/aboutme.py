@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 def aboutme():
     st.header("🤵 Alfarezza Ryan P. Purba")
@@ -33,8 +34,7 @@ def aboutme():
         # logo_path = os.path.join("logo", "github-mark.png")
 
     with col2:
-        
         # st.image(logo_path, width=500)
-
-        st.image("logo/github-mark.png", width=500, caption="Alfarezza Ryan P. Purba")  # Ganti dengan foto profil atau logo
+        st.subheader("My Name")
+        # st.image("logo/github-mark.png", width=500, caption="Alfarezza Ryan P. Purba")  # Ganti dengan foto profil atau logo
         # st.image("logo/github-mark.png", width=500)
