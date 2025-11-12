@@ -1,5 +1,5 @@
-def cumipmt(rate_annual, nper, pv, start_period, end_period, payment_type):
-    # Konversi suku bunga tahunan ke bulanan
+def cumipmt_with_history(rate_annual, nper, pv, start_period, end_period, payment_type):
+    # Konversi bunga tahunan ke bulanan
     rate = rate_annual / 12 / 100
 
     # Hitung pembayaran bulanan (annuitas)
@@ -7,26 +7,25 @@ def cumipmt(rate_annual, nper, pv, start_period, end_period, payment_type):
 
     total_interest = 0
     balance = pv
+    interest_history = {}
 
     for period in range(1, nper + 1):
-        # Hitung bunga untuk periode ini
         interest = balance * rate
-
-        # Hitung pokok yang dibayar di periode ini
         principal = payment - interest
 
-        # Jika periode ada di antara start dan end, tambahkan ke total bunga
+        # Simpan history bunga jika periode dalam rentang
         if start_period <= period <= end_period:
+            interest_history[period] = round(interest, 2)
             total_interest += interest
 
-        # Kurangi sisa pinjaman
+        # Update sisa pinjaman
         balance -= principal
 
-    return round(total_interest, 2)
+    return round(total_interest, 2), interest_history
 
 
 # ==== User Input ====
-print("=== Kalkulator CUMIPMT (Python) ===")
+print("=== Kalkulator CUMIPMT dengan History (Python) ===")
 rate = float(input("Masukkan bunga per tahun (%): "))
 nper = int(input("Masukkan total periode (bulan): "))
 pv = float(input("Masukkan jumlah pinjaman (Rp): "))
@@ -35,7 +34,10 @@ end_period = int(input("Periode akhir (misal 6): "))
 payment_type = int(input("Tipe pembayaran (0 = akhir bulan, 1 = awal bulan): "))
 
 # Jalankan fungsi
-result = cumipmt(rate, nper, pv, start_period, end_period, payment_type)
+total_interest, history = cumipmt_with_history(rate, nper, pv, start_period, end_period, payment_type)
 
 # Output
-print(f"\nTotal bunga yang dibayar dari bulan {start_period} sampai {end_period}: Rp {result:,.2f}")
+print(f"\nTotal bunga yang dibayar dari bulan {start_period} sampai {end_period}: Rp {total_interest:,.2f}\n")
+print("Rincian bunga per bulan:")
+for month in range(start_period, end_period + 1):
+    print(f"Bunga bulan ke-{month}: Rp {history[month]:,.2f}")
